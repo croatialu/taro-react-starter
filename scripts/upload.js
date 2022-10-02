@@ -23,7 +23,7 @@ const getVersionInfo = () => {
     version: versionName,
     commitId,
     tag: '',
-    isMain: false
+    isMain: false,
   }
 }
 
