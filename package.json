@@ -1,9 +1,8 @@
 {
-  "name": "dobby",
-  "version": "0.0.2",
+  "name": "taro-react-starter",
+  "version": "0.0.1",
   "private": true,
-  "packageManager": "pnpm@7.12.2",
-  "description": "dobby 是一个快乐的小精灵",
+  "description": "",
   "templateInfo": {
     "name": "default",
     "typescript": true,

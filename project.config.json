@@ -2,7 +2,7 @@
   "miniprogramRoot": "dist/",
   "projectname": "dobby",
   "description": "dobby 是一个快乐的小精灵",
-  "appid": "wx0d7d78f12d497d18",
+  "appid": "",
   "setting": {
     "urlCheck": true,
     "es6": false,
