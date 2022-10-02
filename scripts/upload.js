@@ -20,7 +20,7 @@ const getVersionInfo = () => {
     return { version: versionName, commitId: '', tag, isMain: true }
 
   return {
-    version: versionName,
+    version: [versionName, commitId].join('#'),
     commitId,
     tag: '',
     isMain: false,
@@ -29,8 +29,7 @@ const getVersionInfo = () => {
 
 const main = async () => {
   const resolve = dir => path.resolve(__dirname, dir)
-  const { version, commitId, isMain } = getVersionInfo()
-  console.log({ version, commitId })
+  const { version, isMain } = getVersionInfo()
 
   const project = new ci.Project({
     appid: projectConfig.appid,
@@ -44,7 +43,7 @@ const main = async () => {
   await ci.upload({
     project,
     version,
-    desc: pkg.description,
+    desc: isMain ? pkg.description : `[alpha]${pkg.description}`,
     robot: isMain ? 1 : 2,
     setting: {
       es6: true,
