@@ -43,7 +43,7 @@ const main = async () => {
   await ci.upload({
     project,
     version,
-    desc: isMain ? pkg.description : `[alpha]${pkg.description}`,
+    desc: isMain ? pkg.description : `[alpha] ${pkg.description}`,
     robot: isMain ? 1 : 2,
     setting: {
       es6: true,
