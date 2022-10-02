@@ -17,18 +17,19 @@ const getVersionInfo = () => {
     versionName = `v${versionName}`
 
   if (tag)
-    return { version: versionName, commitId: '', tag }
+    return { version: versionName, commitId: '', tag, isMain: true }
 
   return {
     version: versionName,
     commitId,
     tag: '',
+    isMain: false
   }
 }
 
 const main = async () => {
   const resolve = dir => path.resolve(__dirname, dir)
-  const { version, commitId } = getVersionInfo()
+  const { version, commitId, isMain } = getVersionInfo()
   console.log({ version, commitId })
 
   const project = new ci.Project({
@@ -44,6 +45,7 @@ const main = async () => {
     project,
     version,
     desc: pkg.description,
+    robot: isMain ? 1 : 2,
     setting: {
       es6: true,
     },
