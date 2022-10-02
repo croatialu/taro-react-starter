@@ -15,5 +15,6 @@ module.exports = {
       'prefer-double',
     ],
     'react/react-in-jsx-scope': 'off',
+    'eol-last': 'off',
   },
 }
